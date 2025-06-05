@@ -1,54 +1,61 @@
-# React + TypeScript + Vite
+# ConvoOS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🧠 **ConvoOS** is a Chrome extension that captures user prompts from ChatGPT and other AI chat platforms, enabling seamless context syncing and agentic execution across multiple AI models and applications.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Overview
 
-## Expanding the ESLint configuration
+ConvoOS bridges the gap between AI chatbots by:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Capturing and storing prompts you type on ChatGPT (and other supported AI platforms)
+- Syncing conversation context across different AI agents and services
+- Enabling agentic execution of commands on third-party platforms (e.g., GitHub) via MCP-based APIs
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This allows users to continue workflows seamlessly across multiple AI environments without losing context.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Features (Sprint 1 MVP)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Chrome extension popup UI built with React
+- Captures ChatGPT prompt text via content scripts
+- Stores last prompt locally using Chrome Storage API
+- Visual indicator showing ConvoOS is active
+- Manual sync button (no backend integration yet)
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js (v16+ recommended)
+- npm or yarn
+- Google Chrome browser
+
+### Setup
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/yourusername/ConvoOS.git
+   cd ConvoOS
+2. Install Dependencies
+     npm install
+    # or
+    yarn install
+3.Start the development server:
+    npm run dev
+
+4.Load the extension in Chrome:
+  Open chrome://extensions/
+
+  Enable Developer mode (toggle top right)
+
+  Click Load unpacked
+
+  Select the dist folder inside your project directory (or build if that's your output folder)
+
+5. Navigate to https://chat.openai.com and open the extension popup. You should see the last captured prompt displayed.
+
