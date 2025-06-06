@@ -4,7 +4,7 @@
   "description": "Capture ChatGPT prompts and sync context across AI agents",
   "version": "1.0",
   "permissions": ["scripting", "activeTab", "storage"],
-  "host_permissions": ["https://chat.openai.com/*"],
+  "host_permissions": ["https://chatgpt.com/*"],
   "background": {
     "service_worker": "background.js"
   },
