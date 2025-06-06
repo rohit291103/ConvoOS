@@ -6,13 +6,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.action === "promptCaptured") {
-    // Set badge text
     chrome.action.setBadgeText({ text: "1" });
 
-    // Optional: set badge color (red)
-    chrome.action.setBadgeBackgroundColor({ color: "	#555555" });
+    // ✅ Fixed badge color
+    chrome.action.setBadgeBackgroundColor({ color: "#555555" });
 
-    // Clear badge after 3 seconds
     setTimeout(() => {
       chrome.action.setBadgeText({ text: "" });
     }, 3000);

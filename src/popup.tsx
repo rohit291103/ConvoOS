@@ -99,7 +99,7 @@ const Popup = () => {
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     },
     subtitle: {
-      margin: "6px 0 0",
+      margin: "-6px 0 0",
       fontSize: 14,
       fontWeight: 500,
       opacity: 0.85,
@@ -114,7 +114,7 @@ const Popup = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      padding: "14px 20px",
+      padding: "10px 20px",
       backgroundColor: LIGHT_BLUE,
       borderRadius: 10,
       boxShadow: "0 2px 8px rgba(59, 130, 246, 0.15)",
